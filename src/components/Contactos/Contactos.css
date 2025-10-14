@@ -1,0 +1,124 @@
+/* --- Estilos del Contenedor Principal --- */
+.contact-page-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    color: #f5f5f5; /* Color de texto base */
+}
+
+.contact-title {
+    color: #ffcc66; /* Color de acento para el título principal */
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+.contact-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* --- Contenido (Info y Formulario) con GRID para escritorio --- */
+.contact-content {
+    display: grid;
+    /* En escritorio, 1 columna pequeña para info y 2 para el formulario */
+    grid-template-columns: 1fr 2fr; 
+    gap: 3rem;
+    padding: 1.5rem;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Estilos de la Sección de Información --- */
+.contact-info h2, .contact-form-section h2 {
+    color: #b3e00d; /* Color de acento para subtítulos */
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+/* --- Estilos del Formulario --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #f5f5f5;
+    box-sizing: border-box; /* Incluir padding en el ancho */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permitir solo redimensionamiento vertical */
+}
+
+.submit-button {
+    background-color: #e91e63; /* Color llamativo para el botón */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #c2185b;
+}
+
+.success-message {
+    background-color: #38761d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* --- Responsividad para Móviles (Max 768px) --- */
+@media (max-width: 768px) {
+    .contact-page-container {
+        padding: 0.5rem;
+    }
+    
+    .contact-content {
+        /* Volver a una sola columna (apilado) */
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    /* Mejorar el espaciado y tamaño en móvil */
+    .contact-title {
+        font-size: 1.8rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1em;
+        margin-bottom: 1.5rem;
+    }
+}

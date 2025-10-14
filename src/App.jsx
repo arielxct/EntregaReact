@@ -6,6 +6,9 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { Cart } from "./components/Cart/Cart";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { Nav } from "./components/Nav/Nav";
+// 1. IMPORTAR EL COMPONENTE CONTACTOS
+import { Contactos } from "./components/Contactos/Contactos"; 
+
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -82,6 +85,18 @@ function App() {
             element={
               <ItemDetailContainer onAddToCart={handleAddToCart} />
             }
+          />
+          {/* 2. NUEVA RUTA PARA CONTACTOS */}
+          <Route path="/contacto" element={<Contactos />} />
+          {/* Opcional: Ruta para /productos, si es diferente a la ruta "/" (Inicio) */}
+          <Route 
+             path="/productos" 
+             element={
+                 <ItemListContainer 
+                     onAddToCart={handleAddToCart} 
+                     titulo="Todos los Productos" 
+                 />
+             } 
           />
         </Routes>
       </main>

@@ -1,37 +1,158 @@
-nav {
-  background-color: #222;
-  padding: 12px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+/* --- Estilos de Escritorio (Default: Horizontal y Centrado) --- */
+.main-nav {
+    background-color: #151515; /* Fondo más oscuro */
+    padding: 1rem 0; /* Más padding vertical */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin: 0;
-  padding: 0;
+.nav-links {
+    list-style: none;
+    display: flex; 
+    justify-content: center;
+    gap: 40px; /* Más separación entre elementos */
+    margin: 0;
+    padding: 0;
 }
 
-nav li {
-  display: inline-block;
+.main-nav li {
+    display: inline-block;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
+.main-nav a {
+    color: #f5f5f5; /* Color blanco brillante */
+    text-decoration: none;
+    font-size: 1.15em; 
+    font-weight: 600; /* Fuente un poco más audaz */
+    padding: 5px 0; /* Padding ajustado para el efecto de línea */
+    position: relative;
+    transition: color 0.3s ease;
 }
+
+/* Efecto de línea inferior animada (más vistoso que cambiar background) */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #b3e00d; /* Color de acento */
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #b3e00d; /* El texto se vuelve de color acento */
+}
+
+.main-nav a:hover::after {
+    width: 100%; /* La línea inferior se extiende al hacer hover */
+}
+
+/* Ocultar el botón hamburguesa por defecto en escritorio */
+.menu-toggle {
+    display: none; 
+}
+
+/* --- Carrito de Compras (Estilos Mejorados) --- */
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cart-icon {
+    font-size: 1.2em;
+    margin-right: 0.3rem;
+}
+
 .cart-count {
-  background: #e91e63;
-  color: #fff;
-  border-radius: 50%;
-  padding: 2px 8px;
-  font-size: 0.9em;
-  margin: 0 6px;
-  vertical-align: middle;
+    background: #e91e63; /* Fondo rojo/magenta */
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin: 0 0 0 4px;
+    vertical-align: middle;
+}
+
+/* --- Media Query para Móviles (Max 768px) --- */
+@media (max-width: 768px) {
+    
+    .main-nav {
+        padding: 1rem 1.5rem; /* Ajuste del padding */
+        justify-content: space-between; /* El menú y el carrito a los lados */
+        /* Asegurar que el carrito se vea en móvil si es necesario */
+        align-items: center;
+    }
+
+    /* Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.8rem; /* Botón más grande */
+        cursor: pointer;
+        z-index: 1001;
+        order: 2; /* Coloca el toggle a la derecha (si hay carrito) */
+    }
+    
+    /* Mostrar carrito en la barra principal para móviles */
+    .cart-item-desktop {
+        display: block; /* Muestra el carrito en la barra de navegación móvil */
+        order: 1; /* Coloca el carrito a la izquierda */
+        margin-right: auto; /* Empuja el toggle a la derecha */
+    }
+
+    /* Ocultamos los nombres de los enlaces en móvil, solo mostramos el icono */
+    .cart-item-desktop .cart-link span:not(.cart-count) {
+        display: none;
+    }
+    .cart-item-desktop .cart-link .cart-icon {
+        display: inline;
+    }
+    
+    /* Estilos del menú móvil (overlay) */
+    .nav-links {
+        display: none; 
+        position: fixed; /* Usamos fixed en lugar de absolute */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.98); /* Fondo casi opaco */
+        transition: transform 0.4s ease-in-out;
+        transform: translateX(100%);
+    }
+    
+    .nav-links.open {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .main-nav li {
+        margin: 20px 0; /* Más espacio vertical */
+    }
+
+    .main-nav a {
+        font-size: 1.5em; /* Tamaño cómodo para el tacto */
+        padding: 10px 20px;
+        display: block;
+    }
+
+    /* Anular el efecto de línea en móvil (generalmente distrae) */
+    .main-nav a::after {
+        display: none;
+    }
+    .main-nav a:hover {
+        background-color: transparent;
+        color: #b3e00d;
+    }
 }

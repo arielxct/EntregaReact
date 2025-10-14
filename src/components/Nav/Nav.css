@@ -1,18 +1,23 @@
 /* --- Estilos de Escritorio (Default: Horizontal y Centrado) --- */
 .main-nav {
-    background-color: #151515; /* Fondo más oscuro */
-    padding: 1rem 0; /* Más padding vertical */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    background-color: #151515;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     position: sticky; 
     top: 0;
     z-index: 1000;
+}
+
+/* OCULTAR el ícono de carrito SOLO EN MÓVIL en la vista de escritorio */
+.mobile-cart-icon-link-solo {
+    display: none;
 }
 
 .nav-links {
     list-style: none;
     display: flex; 
     justify-content: center;
-    gap: 40px; /* Más separación entre elementos */
+    gap: 40px; 
     margin: 0;
     padding: 0;
 }
@@ -22,33 +27,33 @@
 }
 
 .main-nav a {
-    color: #f5f5f5; /* Color blanco brillante */
+    color: #f5f5f5;
     text-decoration: none;
     font-size: 1.15em; 
-    font-weight: 600; /* Fuente un poco más audaz */
-    padding: 5px 0; /* Padding ajustado para el efecto de línea */
+    font-weight: 600;
+    padding: 5px 0; 
     position: relative;
     transition: color 0.3s ease;
 }
 
-/* Efecto de línea inferior animada (más vistoso que cambiar background) */
+/* Efecto de línea inferior animada */
 .main-nav a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 3px;
-    background-color: #b3e00d; /* Color de acento */
+    background-color: #b3e00d;
     bottom: -5px;
     left: 0;
     transition: width 0.3s ease;
 }
 
 .main-nav a:hover {
-    color: #b3e00d; /* El texto se vuelve de color acento */
+    color: #b3e00d;
 }
 
 .main-nav a:hover::after {
-    width: 100%; /* La línea inferior se extiende al hacer hover */
+    width: 100%;
 }
 
 /* Ocultar el botón hamburguesa por defecto en escritorio */
@@ -56,37 +61,69 @@
     display: none; 
 }
 
-/* --- Carrito de Compras (Estilos Mejorados) --- */
+/* --- Carrito de Compras (Estilos para el item en la lista .nav-links) --- */
 .cart-link {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px; 
 }
 
-.cart-icon {
+.cart-link .cart-icon {
     font-size: 1.2em;
-    margin-right: 0.3rem;
 }
 
 .cart-count {
-    background: #e91e63; /* Fondo rojo/magenta */
+    background: #e91e63;
     color: #fff;
     border-radius: 50%;
     padding: 2px 7px;
     font-size: 0.8em;
     font-weight: 700;
-    margin: 0 0 0 4px;
-    vertical-align: middle;
+    margin: 0;
+    vertical-align: middle; 
 }
+
+.nav-item-cart .cart-link {
+    color: #b3e00d; 
+}
+.nav-item-cart .cart-link:hover {
+    color: #fff;
+}
+.nav-item-cart .cart-link:hover .cart-count {
+    background: #c2185b;
+}
+
 
 /* --- Media Query para Móviles (Max 768px) --- */
 @media (max-width: 768px) {
     
     .main-nav {
-        padding: 1rem 1.5rem; /* Ajuste del padding */
-        justify-content: space-between; /* El menú y el carrito a los lados */
-        /* Asegurar que el carrito se vea en móvil si es necesario */
+        padding: 1rem 1.5rem; 
+        display: flex;
+        justify-content: space-between; 
         align-items: center;
+    }
+
+    /* HACER VISIBLE y posicionar el ícono/contador SOLO PARA MÓVIL */
+    .mobile-cart-icon-link-solo {
+        display: flex; /* Mostrar el carrito solo icono */
+        align-items: center;
+        text-decoration: none;
+        color: #f5f5f5; 
+        font-size: 1.1em;
+        order: 1; 
+        margin-right: auto;
+        gap: 4px;
+        position: relative; 
+    }
+    
+    /* Posicionar el contador flotante sobre el ícono del carrito */
+    .mobile-cart-icon-link-solo .cart-count {
+        font-size: 0.8em;
+        position: absolute; 
+        top: -8px; 
+        right: -15px; 
+        z-index: 1002;
     }
 
     /* Mostrar el botón hamburguesa */
@@ -95,31 +132,16 @@
         background: none;
         border: none;
         color: #fff;
-        font-size: 1.8rem; /* Botón más grande */
+        font-size: 1.8rem; 
         cursor: pointer;
         z-index: 1001;
-        order: 2; /* Coloca el toggle a la derecha (si hay carrito) */
-    }
-    
-    /* Mostrar carrito en la barra principal para móviles */
-    .cart-item-desktop {
-        display: block; /* Muestra el carrito en la barra de navegación móvil */
-        order: 1; /* Coloca el carrito a la izquierda */
-        margin-right: auto; /* Empuja el toggle a la derecha */
-    }
-
-    /* Ocultamos los nombres de los enlaces en móvil, solo mostramos el icono */
-    .cart-item-desktop .cart-link span:not(.cart-count) {
-        display: none;
-    }
-    .cart-item-desktop .cart-link .cart-icon {
-        display: inline;
+        order: 2; 
     }
     
     /* Estilos del menú móvil (overlay) */
     .nav-links {
         display: none; 
-        position: fixed; /* Usamos fixed en lugar de absolute */
+        position: fixed; 
         top: 0;
         left: 0;
         width: 100%;
@@ -127,7 +149,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.98); /* Fondo casi opaco */
+        background-color: rgba(0, 0, 0, 0.98); 
         transition: transform 0.4s ease-in-out;
         transform: translateX(100%);
     }
@@ -138,21 +160,39 @@
     }
 
     .main-nav li {
-        margin: 20px 0; /* Más espacio vertical */
+        margin: 20px 0; 
+        display: list-item; /* Asegura que todos los li se apilen */
     }
 
     .main-nav a {
-        font-size: 1.5em; /* Tamaño cómodo para el tacto */
+        font-size: 1.5em; 
         padding: 10px 20px;
         display: block;
+        color: #f5f5f5;
     }
 
-    /* Anular el efecto de línea en móvil (generalmente distrae) */
+    /* Anular el efecto de línea en móvil */
     .main-nav a::after {
         display: none;
     }
     .main-nav a:hover {
         background-color: transparent;
         color: #b3e00d;
+    }
+    
+    /* Ajustes para el item de carrito DENTRO del menú hamburguesa */
+    .nav-item-cart {
+        /* Aseguramos que el item de carrito con texto se muestre en el overlay */
+        display: block !important;
+    }
+    .nav-item-cart .cart-link {
+        justify-content: center; 
+        gap: 15px; 
+    }
+    .nav-item-cart .cart-link .cart-count {
+        font-size: 1em;
+        top: 0; 
+        left: 0;
+        position: static; /* Quitar el posicionamiento absoluto del contador */
     }
 }

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Colchon de resortes de 2 plazas",
+    "price": 700000,
+    "category": "colchon",
+    "description": "Colchon de dos plazas de resortes de la linea beautyrest.",
+    "imageUrl": "/images/colchon1.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Colchon de espuma de 2 plazas",
+    "price": 500000,
+    "category": "colchon",
+    "description": "Hogaza de 750 g con fermentación lenta de 24 horas.",
+    "imageUrl": "/images/colchon2.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Colchon  Backcare de 2 plazas",
+    "category": "colchon",
+    "price": 600000,
+    "description": "Colchon de resortes backcare de dos plazas.",
+    "imageUrl": "/images/colchon3.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Acolchado de 2 plazas color black",
+    "price": 300000,
+    "category": "acolchado",
+    "description": "Acolchado king color black.",
+    "imageUrl": "/images/acolchado1.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Acolchado de 2 plazas color gris",
+    "price": 220000,
+    "category": "acolchado",
+    "description": "Acolchado  queen  color gris.",
+    "imageUrl": "/images/acolchado2.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Acolchado de queen color natural",
+    "category": "acolchado",
+    "price": 180000,
+    "description": "Acolchado queen color natural.",
+    "imageUrl": "/images/acolchado3.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Almohada Spa",
+    "price": 105000,
+    "category": "almohada",
+    "description": "Almohada de espuma medida 70x40 cm.",
+    "imageUrl": "/images/almohada1.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Almohada Black",
+    "price": 150000,
+    "category": "almohada",
+    "description": "Almohada de pluma medida 80x40 cm.",
+    "imageUrl": "/images/almohada2.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Almohada Belmo",
+    "category": "almohada",
+    "price": 90000,
+    "description": "Almohada de espuma de 70x40 cm.",
+    "imageUrl": "/images/almohada3.jpg"
+  }
+]

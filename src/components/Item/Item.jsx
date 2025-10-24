@@ -1,20 +1,17 @@
-
 import "./Item.css";
 import { Link } from "react-router-dom";
 
-export const Item = ({ id, name, price, description, imageUrl, children }) => (
-  <article className="product-item">
-    <img src={imageUrl} alt={description} />
+export const Item = ({ id, name, price, description, imageUrl, children, className = "" }) => (
+  <article className={`product-item ${className}`}>
+    <img src={imageUrl} alt={description || name} />
     <h2 className="product-title">{name}</h2>
 
-    {/* NUEVA ENVOLTURA PARA DETALLES */}
-    <div className="product-details"> 
-        <p>Precio: ${price}</p>
-        <p>Descripción: {description}</p>
+    <div className="product-details">
+      <p className="product-price">Precio: ${price}</p>
+      <p className="product-desc">{description}</p>
     </div>
-    {/* FIN DE LA ENVOLTURA */}
 
-    <Link to={`/item/${id}`}>Ver detalle</Link>
+    <Link to={`/item/${id}`} className="detail-link">Ver detalle</Link>
     {children}
   </article>
 );

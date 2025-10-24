@@ -1,20 +1,47 @@
+// ...existing code...
 import { Item } from "../Item/Item";
 
-export const ItemDetail = ({ detail, onAddToCart, onClose }) => {
+export const ItemDetail = ({ detail = {}, onAddToCart = () => {}, onClose = () => {} }) => {
+  if (!detail || Object.keys(detail).length === 0) {
+    return <section className="item-detail"><p> Producto no disponible </p></section>;
+  }
+
   return (
     <section className="item-detail">
       <Item {...detail} className="detalle-item">
-        <button onClick={() => onAddToCart(detail)}>
-          Enviar al carrito
-        </button>
-        <button onClick={onClose} style={{ marginLeft: "10px" }}>
-          Cerrar
-        </button>
+        <div className="detail-actions">
+          <button
+            type="button"
+            onClick={() => onAddToCart(detail)}
+            aria-label={`Agregar ${detail.name || "producto"} al carrito`}
+            className="btn btn-primary"
+          >
+            Enviar al carrito
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Cerrar vista de detalle"
+            className="btn btn-secondary"
+            style={{ marginLeft: "10px" }}
+          >
+            Cerrar
+          </button>
+        </div>
       </Item>
-      <div style={{ marginTop: "1rem", color: "#ccc" }}>
+
+      <div className="item-detail-extra" style={{ marginTop: "1rem", color: "#ccc" }}>
         <p><strong>Detalles extra:</strong></p>
-        <p>{detail.longDescription || "Sin detalles adicionales."}</p>
+        <p>{detail.longDescription || detail.description || "Sin detalles adicionales."}</p>
+        {detail.specs && (
+          <ul className="detail-specs">
+            {Object.entries(detail.specs).map(([k, v]) => (
+              <li key={k}><strong>{k}:</strong> {String(v)}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   );
 };
+// ...existing code...

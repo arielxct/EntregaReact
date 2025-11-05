@@ -24,7 +24,7 @@ export const ItemListContainer = ({ titulo, onAddToCart }) => {
     setLoading(true);
     setError(null);
 
-    fetch("/data/products.json", { signal: ac.signal })
+    fetch("https://6903f2bdd0f10a340b2637e1.mockapi.io/products", { signal: ac.signal })
       .then((res) => {
         if (!res.ok) throw new Error("Hubo un problema al buscar productos");
         return res.json();

@@ -7,6 +7,7 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import { Nav } from "./components/Nav/Nav";
 import { Contactos } from "./components/Contactos/Contactos";
 import { CartProvider } from "./Context/useCarts";
+import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer/ProductFormContainer"; // <-- IMPORT agregado
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/contacto" element={<Contactos />} />
             <Route path="/productos" element={<ItemListContainer titulo="Todos los Productos" />} />
+            <Route path="/admin" element={<ProductFormContainer/>} />
           </Routes>
         </main>
         <Footer />

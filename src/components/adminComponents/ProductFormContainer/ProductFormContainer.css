@@ -1,0 +1,156 @@
+:root{
+  --bg: #0f1720;
+  --card: #0b1220;
+  --accent: #ffcc66;
+  --muted: #9aa6b2;
+  --danger: #e25b5b;
+  --radius: 8px;
+}
+
+/* Contenedor */
+section {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Formulario */
+.product-form {
+  width: 100%;
+  max-width: 900px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  box-sizing: border-box;
+  color: #fff;
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* Título */
+.product-form h2 {
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+  color: var(--accent);
+  font-size: 1.25rem;
+  letter-spacing: 0.4px;
+}
+
+/* Campo (envoltorio) */
+.product-form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.product-form label {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+/* Inputs y textarea */
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"],
+.product-form textarea {
+  background: #0b1220;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #fff;
+  padding: 0.55rem 0.6rem;
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  box-sizing: border-box;
+}
+
+/* Forzar file input visual coherente */
+.product-form input[type="file"] {
+  padding: 0.35rem 0.4rem;
+}
+
+/* Textarea */
+.product-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Focus */
+.product-form input:focus,
+.product-form textarea:focus,
+.product-form input[type="file"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255,204,102,0.06);
+}
+
+/* Error */
+.product-form .error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
+
+/* Botones */
+.product-form .btn {
+  margin-top: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(180deg,var(--accent),#f0b84a);
+  color: #0b1220;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.45);
+  transition: transform .08s ease, opacity .12s ease;
+}
+
+.product-form .btn:active { transform: translateY(1px); }
+.product-form .btn[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Mensajes generales */
+.product-form .general-error {
+  color: var(--danger);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Responsive: columnas en desktop */
+@media (min-width: 760px) {
+  .product-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* Hacer que textarea e input file ocupen ambas columnas */
+  .product-form textarea,
+  .product-form input[type="file"] {
+    grid-column: 1 / -1;
+  }
+
+  /* Botón ocupa ambas columnas */
+  .product-form .btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+/* Móvil: anchura completa y ajuste de tipografía */
+@media (max-width: 420px) {
+  .product-form {
+    padding: 1rem;
+  }
+
+  .product-form h2 {
+    font-size: 1.05rem;
+  }
+
+  .product-form input,
+  .product-form textarea {
+    font-size: 0.95rem;
+  }
+}

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
@@ -12,7 +12,7 @@ import { ProductFormContainer } from "./components/adminComponents/ProductFormCo
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Nav />
         <main className="layout-ecommerce">
@@ -26,7 +26,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </CartProvider>
   );
 }

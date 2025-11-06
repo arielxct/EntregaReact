@@ -51,7 +51,8 @@ export const uploadToImgbb = async (file) => {
 
   // Convertimos el archivo a base64 antes de enviarlo
   const base64 = await fileToBase64(file);
-  form.append("image", base64);
+   form.append("image", base64);
+ // form.append("imageUrl", base64);
 
   // Llamada a la API con fetch para la carga de la imagen (POST)
   const response = await fetch(ENDPOINT, {

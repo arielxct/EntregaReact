@@ -44,7 +44,7 @@ export const ProductFormContainer = () => {
       const productData = {
         ...product,
         price: Number(product.price),
-        image: imageUrl,
+        imageUrl: imageUrl,
       };
 
       await createProduct(productData);

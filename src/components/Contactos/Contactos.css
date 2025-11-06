@@ -102,7 +102,7 @@
   padding: 10px 12px;
   border-radius: 8px;
   background: var(--input-bg);
-  border: 1px solid rgba(216, 236, 28, 0.815);
+  border: 1px solid rgba(255,255,255,0.05);
   color: #fff;
   box-sizing: border-box;
   font-size: 0.95rem;
@@ -126,4 +126,51 @@
 .submit-button{
   display: inline-block;
   padding: 12px 18px;
-  background:
+  background: linear-gradient(180deg,var(--accent),#f0b84a);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  align-self: flex-start;
+  transition: transform .08s ease, opacity .12s ease;
+}
+
+.submit-button:hover{ transform: translateY(-1px); }
+.submit-button:active{ transform: translateY(0); }
+
+/* Mensaje de éxito */
+.success-message{
+  background: #2d6a2d;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Error (si lo necesitas en el form) */
+.form-error{
+  color: var(--danger);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 900px){
+  .contact-content{
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1rem;
+  }
+
+  .contact-title{ font-size: 1.6rem; }
+  .contact-subtitle{ font-size: 0.95rem; }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media (max-width: 420px){
+  .contact-page-container{ padding: 0.5rem; }
+  .submit-button{ width: 100%; justify-self: stretch; }
+}

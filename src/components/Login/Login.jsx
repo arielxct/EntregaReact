@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {useAuthContext} from "../../Context/AuthContext/useAuthContext";
 import {Navigate, useNavigate} from "react-router-dom";
+import './Login.css';
 
 export const Login = () => {
     const [userForm, setUserForm] = useState({name:"", password:""});

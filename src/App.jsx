@@ -7,27 +7,48 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import { Nav } from "./components/Nav/Nav";
 import { Contactos } from "./components/Contactos/Contactos";
 import { CartProvider } from "./Context/useCarts";
-import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer/ProductFormContainer"; // <-- IMPORT agregado
+import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer/ProductFormContainer";
+import { AuthProvider } from "./Context/AuthContext/AuthProvider"; // <-- agregado
+
+import { MainLayout } from "./layouts/MainLayout";
+import { AdminLayout } from "./layouts/AdminLayout";
+import { RutaProtegida } from "./components/RutaProtegida/RutaProtegida";
+import { Login } from "./components/Login/Login";
 
 function App() {
   return (
-    <CartProvider>
-      <HashRouter>
-        <Header />
-        <Nav />
-        <main className="layout-ecommerce">
-          <Routes>
-            <Route path="/" element={<ItemListContainer titulo="Bienvenidos" />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/item/:id" element={<ItemDetailContainer />} />
-            <Route path="/contacto" element={<Contactos />} />
-            <Route path="/productos" element={<ItemListContainer titulo="Todos los Productos" />} />
-            <Route path="/admin" element={<ProductFormContainer/>} />
-          </Routes>
-        </main>
-        <Footer />
-      </HashRouter>
-    </CartProvider>
+    <AuthProvider> {/* <-- envolver la app con AuthProvider <Header /> */}
+      <CartProvider>
+        <HashRouter>
+          <Header />
+          <Nav />
+          <main className="layout-ecommerce">
+            <Routes>
+              <Route element={<MainLayout />}>
+                <Route path="/" element={<ItemListContainer titulo="Bienvenidos" />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/item/:id" element={<ItemDetailContainer />} />
+                <Route path="/contacto" element={<Contactos />} />
+                <Route path="/productos" element={<ItemListContainer titulo="Todos los Productos" />} />
+              </Route>
+
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<Login />} />
+                <Route
+                  path="alta-productos"
+                  element={
+                    <RutaProtegida>
+                      <ProductFormContainer />
+                    </RutaProtegida>
+                  }
+                />
+              </Route>
+            </Routes>
+          </main>
+          <Footer />
+        </HashRouter>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 

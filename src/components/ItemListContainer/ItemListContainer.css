@@ -14,7 +14,7 @@
 
 .item-list-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Fuerza 4 columnas */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 2rem;
   justify-items: stretch;
   align-items: stretch;
@@ -23,7 +23,7 @@
 
 @media (max-width: 900px) {
   .item-list-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
@@ -37,6 +37,6 @@
   }
   .item-list-grid {
     gap: 1rem;
-    grid-template-columns: 1fr; /* 1 columna en móviles */
+    grid-template-columns: 1fr; 
   }
 }

@@ -4,7 +4,7 @@ import { useCart } from "../../Context/useCarts";
 
 const simulatePayment = (paymentData) =>
   new Promise((resolve, reject) => {
-    // simulación de demora y posibilidad de fallo
+   
     setTimeout(() => {
       const ok = Math.random() > 0.08; // 92% éxito
       if (ok) resolve({ orderId: `ORD-${Date.now()}` });
@@ -44,7 +44,7 @@ export const Cart = () => {
   const handlePay = async (e) => {
     e.preventDefault();
     setPaymentError("");
-    // validación básica
+  
     if (!payment.nombre.trim() || payment.cardNumber.trim().length < 12) {
       setPaymentError("Complete los datos de pago correctamente.");
       return;
@@ -53,7 +53,7 @@ export const Cart = () => {
     try {
       const result = await simulatePayment(payment);
       setSuccess(result);
-      // opcional: persistir orden localmente / llamar API
+    
       clearCart();
       setPayOpen(false);
       setPayment({ nombre: "", cardNumber: "", expiry: "", cvv: "" });

@@ -1,10 +1,10 @@
-/* --- Estilos Generales --- */
+
 .app-header {
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: #f5f5f5; /* Texto claro */
+    background-color: #1a1a1a; 
+    color: #f5f5f5;
     padding: 1rem 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
-    text-align: center; /* Centrar contenido por defecto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    text-align: center; 
     width: 100%;
     box-sizing: border-box;
 }
@@ -12,13 +12,11 @@
 .header-title {
     font-size: 1.8rem;
     font-weight: 700;
-    margin: 0; /* Eliminar márgenes predeterminados del h1 */
-    color: #b3e00d; /* Color de acento */
+    margin: 0; 
+    color: #b3e00d; 
     transition: color 0.3s ease;
 }
 
-/* --- Responsividad para Dispositivos Móviles (Default) --- */
-/* Los estilos generales ya están optimizados para móviles primero */
 
 @media (max-width: 480px) {
     .app-header {
@@ -26,21 +24,20 @@
     }
     
     .header-title {
-        font-size: 1.5rem; /* Reducir el tamaño de la fuente en pantallas muy pequeñas */
+        font-size: 1.5rem; 
     }
 }
 
-/* --- Responsividad para Tablets y Escritorio (Min 768px) --- */
+
 @media (min-width: 768px) {
     .app-header {
-        /* Usar Flexbox para alinear contenido (útil si agregas logo/navegación) */
+        
         display: flex;
-        justify-content: center; /* Centrar el título horizontalmente */
+        justify-content: center; 
         align-items: center;
         padding: 1.5rem 3rem;
     }
     
     .header-title {
-        font-size: 2.5rem; /* Aumentar el tamaño en pantallas grandes */
-    }
+        font-size: 2.5rem; 
 }

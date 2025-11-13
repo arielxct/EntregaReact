@@ -1,5 +1,4 @@
-import "./Header.css"; // Importamos los estilos
-
+import "./Header.css"; 
 export const Header = () => {
   return (
     <header className="app-header">

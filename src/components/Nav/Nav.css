@@ -1,4 +1,4 @@
-/* --- Estilos de Escritorio (Default: Horizontal y Centrado) --- */
+
 .main-nav {
     background-color: #151515;
     padding: 1rem 0;
@@ -8,7 +8,7 @@
     z-index: 1000;
 }
 
-/* OCULTAR el ícono de carrito SOLO EN MÓVIL en la vista de escritorio */
+
 .mobile-cart-icon-link-solo {
     display: none;
 }
@@ -36,7 +36,7 @@
     transition: color 0.3s ease;
 }
 
-/* Efecto de línea inferior animada */
+
 .main-nav a::after {
     content: '';
     position: absolute;
@@ -56,12 +56,11 @@
     width: 100%;
 }
 
-/* Ocultar el botón hamburguesa por defecto en escritorio */
+
 .menu-toggle {
     display: none; 
 }
 
-/* --- Carrito de Compras (Estilos para el item en la lista .nav-links) --- */
 .cart-link {
     display: flex;
     align-items: center;
@@ -94,7 +93,7 @@
 }
 
 
-/* --- Media Query para Móviles (Max 768px) --- */
+
 @media (max-width: 768px) {
     
     .main-nav {
@@ -104,9 +103,9 @@
         align-items: center;
     }
 
-    /* HACER VISIBLE y posicionar el ícono/contador SOLO PARA MÓVIL */
+    
     .mobile-cart-icon-link-solo {
-        display: flex; /* Mostrar el carrito solo icono */
+        display: flex; 
         align-items: center;
         text-decoration: none;
         color: #f5f5f5; 
@@ -117,7 +116,7 @@
         position: relative; 
     }
     
-    /* Posicionar el contador flotante sobre el ícono del carrito */
+  
     .mobile-cart-icon-link-solo .cart-count {
         font-size: 0.8em;
         position: absolute; 
@@ -126,7 +125,6 @@
         z-index: 1002;
     }
 
-    /* Mostrar el botón hamburguesa */
     .menu-toggle {
         display: block;
         background: none;
@@ -138,7 +136,7 @@
         order: 2; 
     }
     
-    /* Estilos del menú móvil (overlay) */
+    
     .nav-links {
         display: none; 
         position: fixed; 
@@ -161,7 +159,7 @@
 
     .main-nav li {
         margin: 20px 0; 
-        display: list-item; /* Asegura que todos los li se apilen */
+        display: list-item;
     }
 
     .main-nav a {
@@ -171,7 +169,7 @@
         color: #f5f5f5;
     }
 
-    /* Anular el efecto de línea en móvil */
+ 
     .main-nav a::after {
         display: none;
     }
@@ -180,9 +178,9 @@
         color: #b3e00d;
     }
     
-    /* Ajustes para el item de carrito DENTRO del menú hamburguesa */
+  
     .nav-item-cart {
-        /* Aseguramos que el item de carrito con texto se muestre en el overlay */
+      
         display: block !important;
     }
     .nav-item-cart .cart-link {
@@ -193,6 +191,6 @@
         font-size: 1em;
         top: 0; 
         left: 0;
-        position: static; /* Quitar el posicionamiento absoluto del contador */
+        position: static; 
     }
 }

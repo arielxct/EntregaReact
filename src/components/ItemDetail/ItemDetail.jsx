@@ -1,4 +1,4 @@
-// ...existing code...
+
 import { Item } from "../Item/Item";
 
 export const ItemDetail = ({ detail = {}, onAddToCart = () => {}, onClose = () => {} }) => {
@@ -44,4 +44,3 @@ export const ItemDetail = ({ detail = {}, onAddToCart = () => {}, onClose = () =
     </section>
   );
 };
-// ...existing code...

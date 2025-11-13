@@ -7,15 +7,9 @@
   --radius: 8px;
 }
 
-/* Contenedor 
-section {
-  display: flex;
-  justify-content: center;
-  padding: 1.5rem;
-}
-*/
 
-/* Formulario */
+
+
 .product-form {
   width: 100%;
   max-width: 900px;
@@ -29,7 +23,6 @@ section {
   gap: 0.75rem;
 }
 
-/* Título */
 .product-form h2 {
   margin: 0 0 0.5rem 0;
   text-align: left;
@@ -38,20 +31,20 @@ section {
   letter-spacing: 0.4px;
 }
 
-/* Campo (envoltorio) */
+
 .product-form > div {
   display: flex;
   flex-direction: column;
 }
 
-/* Labels */
+
 .product-form label {
   font-size: 0.95rem;
   color: var(--muted);
   margin-bottom: 0.35rem;
 }
 
-/* Inputs y textarea */
+
 .product-form input[type="text"],
 .product-form input[type="number"],
 .product-form input[type="file"],
@@ -85,18 +78,18 @@ ease;
 
 
 
-/* Forzar file input visual coherente */
+
 .product-form input[type="file"] {
   padding: 0.35rem 0.4rem;
 }
 
-/* Textarea */
+
 .product-form textarea {
   min-height: 100px;
   resize: vertical;
 }
 
-/* Focus */
+
 .product-form input:focus,
 .product-form textarea:focus,
 .product-form input[type="file"]:focus {
@@ -104,14 +97,14 @@ ease;
   box-shadow: 0 0 0 4px rgba(255,204,102,0.06);
 }
 
-/* Error */
+
 .product-form .error {
   color: var(--danger);
   font-size: 0.85rem;
   margin-top: 0.35rem;
 }
 
-/* Botones */
+
 .product-form .btn {
   margin-top: 0.5rem;
   padding: 0.65rem 1rem;
@@ -131,34 +124,34 @@ ease;
   cursor: not-allowed;
 }
 
-/* Mensajes generales */
+
 .product-form .general-error {
   color: var(--danger);
   font-weight: 600;
   margin-top: 0.5rem;
 }
 
-/* Responsive: columnas en desktop */
+
 @media (min-width: 760px) {
   .product-form {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
 
-  /* Hacer que textarea e input file ocupen ambas columnas */
+  
   .product-form textarea,
   .product-form input[type="file"] {
     grid-column: 1 / -1;
   }
 
-  /* Botón ocupa ambas columnas */
+
   .product-form .btn {
     grid-column: 1 / -1;
     justify-self: start;
   }
 }
 
-/* Móvil: anchura completa y ajuste de tipografía */
+
 @media (max-width: 420px) {
   .product-form {
     padding: 1rem;

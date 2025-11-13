@@ -1,4 +1,4 @@
-/* Contenedor principal (mantengo reglas previas y añado clases más específicas) */
+
 .cart-wrapper,
 aside {
   background: #0b0b0b;
@@ -12,7 +12,6 @@ aside {
   box-sizing: border-box;
 }
 
-/* Título */
 .cart-wrapper h2,
 aside h2 {
   color: #fff;
@@ -21,7 +20,6 @@ aside h2 {
   font-size: 1.4rem;
 }
 
-/* Lista de productos */
 .cart-list,
 aside ul {
   list-style: none;
@@ -44,7 +42,6 @@ aside li:last-child {
   border-bottom: none;
 }
 
-/* Imagen del producto */
 .cart-item img,
 aside img {
   width: 56px;
@@ -55,7 +52,6 @@ aside img {
   flex-shrink: 0;
 }
 
-/* Meta del producto (nombre / precio) */
 .cart-meta {
   display: flex;
   flex-direction: column;
@@ -80,14 +76,13 @@ aside img {
   font-weight: 700;
 }
 
-/* Acciones por item */
+
 .cart-actions {
   display: flex;
   gap: 6px;
   align-items: center;
 }
 
-/* Botones generales (lista / acciones) */
 .cart-actions button,
 aside button {
   background: linear-gradient(180deg,#0750e6,#0622c5);
@@ -112,7 +107,7 @@ aside button:disabled {
   opacity: 0.7;
 }
 
-/* Resumen y controles */
+
 .cart-summary {
   margin-top: 1rem;
   display: flex;
@@ -127,7 +122,7 @@ aside button:disabled {
   color: #a8ffb0;
 }
 
-/* Controles (Pagar / Vaciar) */
+
 .cart-controls {
   display: flex;
   gap: 10px;
@@ -140,7 +135,7 @@ aside button:disabled {
   font-weight: 700;
 }
 
-/* Checkout / formulario de pago */
+
 .checkout-section {
   margin-top: 1.25rem;
   padding: 1rem;
@@ -154,7 +149,7 @@ aside button:disabled {
   color: #ffd47a;
 }
 
-/* Error del pago */
+
 .payment-error {
   background: rgba(226, 91, 91, 0.12);
   color: #ffb3b3;
@@ -164,7 +159,7 @@ aside button:disabled {
   font-weight: 600;
 }
 
-/* Formulario de pago */
+
 .payment-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -194,7 +189,7 @@ aside button:disabled {
   border-color: #a8ffb0;
 }
 
-/* Botones del formulario */
+
 .payment-form > div {
   grid-column: 1 / -1;
   display: flex;
@@ -220,7 +215,7 @@ aside button:disabled {
   color: #111;
 }
 
-/* Confirmación de orden */
+
 .order-confirmation {
   margin-top: 1rem;
   padding: 1rem;
@@ -234,7 +229,7 @@ aside button:disabled {
   color: #36cc18cb;
 }
 
-/* Pequeños ajustes para mobile */
+
 @media (max-width: 720px) {
   .cart-wrapper,
   aside {

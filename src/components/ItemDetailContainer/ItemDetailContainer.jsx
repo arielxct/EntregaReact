@@ -1,4 +1,4 @@
-// ...existing code...
+
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
@@ -12,7 +12,7 @@ export const ItemDetailContainer = ({ onAddToCart }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // obtener addToCart desde contexto si no viene por props
+  
   let addToCartCtx;
   try {
     const ctx = useCart();
@@ -70,4 +70,3 @@ export const ItemDetailContainer = ({ onAddToCart }) => {
     </main>
   );
 };
-// ...existing code...

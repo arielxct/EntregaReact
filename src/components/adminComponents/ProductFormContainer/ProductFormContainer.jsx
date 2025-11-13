@@ -14,7 +14,7 @@ export const ProductFormContainer = () => {
     price: "",
     category: "",
     description: "",
-    // no usar ...initialProduct si no está definido
+    
   });
 
   const handleChange = (e) => {
@@ -30,7 +30,7 @@ export const ProductFormContainer = () => {
     setLoading(true);
     setErrors({});
 
-    // pasar file dentro del objeto para validación
+   
     const newErrors = validateProduct({ ...product, file }, !file);
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -39,7 +39,7 @@ export const ProductFormContainer = () => {
     }
 
     try {
-      // Asegúrate que uploadImage recibe el archivo (file)
+      
       const imageUrl = file ? await uploadToImgbb(file) : product.image || "";
       const productData = {
         ...product,

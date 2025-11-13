@@ -1,9 +1,9 @@
-// ...existing code...
+
 import { Item } from "../Item/Item";
 import { useCart } from "../../Context/useCarts";
 
 export const ItemList = ({ lista, onAddToCart }) => {
-  // intenta usar la función pasada por props, si no está, intenta obtenerla del contexto
+  
   let addFn = onAddToCart;
   try {
     const ctx = useCart();
@@ -33,4 +33,3 @@ export const ItemList = ({ lista, onAddToCart }) => {
     </>
   );
 };
-// ...existing code...

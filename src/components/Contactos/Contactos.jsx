@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-// import './Contactos.css';//
 
-// ...existing code...
 import './Contactos.css';
-// ...existing code...
+
 
 export const Contactos = () => {
-    // Estado para manejar los datos del formulario
+   
     const [formData, setFormData] = useState({
         nombre: '',
         email: '',
         asunto: '',
         mensaje: ''
     });
-    // Estado para manejar el envío del formulario
+   
     const [mensajeEnviado, setMensajeEnviado] = useState(false);
 
     const handleChange = (e) => {
@@ -26,13 +24,13 @@ export const Contactos = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        // Aquí iría la lógica real para enviar los datos a un servidor/API
+        
         console.log('Datos enviados:', formData);
         
-        // Simular el éxito del envío
+      
         setMensajeEnviado(true);
         
-        // Opcional: Limpiar el formulario después del envío
+       
         setFormData({
             nombre: '',
             email: '',
@@ -40,7 +38,7 @@ export const Contactos = () => {
             mensaje: ''
         });
         
-        // Opcional: Quitar el mensaje de éxito después de unos segundos
+       
         setTimeout(() => setMensajeEnviado(false), 5000);
     };
 

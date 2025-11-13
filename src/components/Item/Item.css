@@ -12,14 +12,14 @@
 
 .product-item img {
   width: 80%;
-  max-width: 474px; /* Fuerza el tamaño máximo */
+  max-width: 474px; 
   height: auto;
   display: block;
   border-radius: 0.5rem;
   margin: 0 auto;
 }
 
-/* Imagen más pequeña en la vista de detalle */
+
 .detalle-item img {
   width: 180px;
   height: auto;

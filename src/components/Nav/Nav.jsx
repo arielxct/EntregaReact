@@ -5,7 +5,7 @@ import { useCart } from "../../Context/useCarts";
 
 export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { carrito } = useCart(); // consumir contexto
+  const { carrito } = useCart(); 
   const totalArticulos = (carrito || []).reduce((acc, prod) => acc + (prod.cantidad || 0), 0);
 
   const closeMenu = () => setIsOpen(false);

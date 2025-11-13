@@ -1,4 +1,4 @@
-// ...existing code...
+
 import { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import "./ItemListContainer.css";
@@ -9,13 +9,13 @@ export const ItemListContainer = ({ titulo, onAddToCart }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Intentar obtener addToCart desde el contexto si no se pasa por props
+
   let addToCartCtx;
   try {
     const ctx = useCart();
     addToCartCtx = ctx?.addToCart;
   } catch (e) {
-    addToCartCtx = undefined; // no hay provider
+    addToCartCtx = undefined; 
   }
   const handleAddToCart = onAddToCart ?? addToCartCtx ?? (() => {});
 

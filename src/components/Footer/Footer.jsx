@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export const Footer = () => {
-    // Año actual para el copyright
+   
     const currentYear = new Date().getFullYear(); 
 
     return (
         <footer className="main-footer">
             <div className="footer-content">
                 
-                {/* Columna 1: Información de la Tienda */}
+                
                 <div className="footer-section about">
                     <h3 className="footer-logo">E-Commerce XYZ</h3>
                     <p>
@@ -21,7 +21,7 @@ export const Footer = () => {
                     </p>
                 </div>
 
-                {/* Columna 2: Enlaces Rápidos */}
+              
                 <div className="footer-section links">
                     <h3>Navegación</h3>
                     <ul>
@@ -32,7 +32,7 @@ export const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Columna 3: Contacto e Información Legal */}
+               
                 <div className="footer-section contact">
                     <h3>Contáctanos</h3>
                     <p><span role="img" aria-label="email">📧</span> Email: info@ecommercexyz.com</p>
@@ -40,7 +40,7 @@ export const Footer = () => {
                     <p><span role="img" aria-label="ubicacion">📍</span> Ubicación: Ciudad Autónoma de Buenos Aires</p>
                 </div>
 
-                {/* Columna 4: Redes Sociales */}
+               
                 <div className="footer-section social">
                     <h3>Síguenos</h3>
                     <div className="social-links">

@@ -5,7 +5,7 @@ import './Login.css';
 
 export const Login = () => {
     const [userForm, setUserForm] = useState({name:"", password:""});
-    const { user, login } = useAuthContext(); // <-- obtener user también
+    const { user, login } = useAuthContext(); 
     const navigate = useNavigate();
 
     const handleChange = (e) => {

@@ -9,17 +9,17 @@
   --radius: 10px;
 }
 
-/* Contenedor principal */
+
 .contact-page-container{
   max-width: 1100px;
   margin: 2rem auto;
   padding: 1rem;
   color: var(--muted);
   box-sizing: border-box;
-  text-align: left; /* por defecto, alinear a la izquierda */
+  text-align: left; 
 }
 
-/* Titulos (mantener título principal centrado opcionalmente) */
+
 .contact-title{
   color: var(--accent);
   text-align: center;
@@ -35,7 +35,7 @@
   color: #bfbfbf;
 }
 
-/* Panel con grid (info + formulario) */
+
 .contact-content{
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -44,25 +44,25 @@
   background: var(--panel);
   border-radius: var(--radius);
   box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-  align-items: start; /* alinear las columnas en la parte superior */
+  align-items: start; 
 }
 
-/* Subtítulos internos */
+
 .contact-info h2,
 .contact-form-section h2{
   color: var(--accent-2);
   margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
-  text-align: left; /* asegurar que los subtítulos estén a la izquierda */
+  text-align: left; 
 }
 
-/* Alinear contenido de ambas columnas a la izquierda */
+
 .contact-info,
 .contact-form-section {
   text-align: left;
 }
 
-/* Información de contacto */
+
 .contact-info p{
   margin: 0.4rem 0;
   line-height: 1.6;
@@ -70,16 +70,16 @@
   text-align: left;
 }
 
-/* Formulario: layout y campos */
+
 .contact-form{
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: flex-start; /* alinear campos y botón a la izquierda */
+  align-items: flex-start; 
   width: 100%;
 }
 
-/* Grupo de campo */
+
 .form-group{
   display: flex;
   flex-direction: column;
@@ -87,14 +87,14 @@
   width: 100%;
 }
 
-/* Labels */
+
 .form-group label{
   font-weight: 600;
   color: #d3d3d3;
   font-size: 0.95rem;
 }
 
-/* Inputs / textarea */
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea{
@@ -108,13 +108,13 @@
   font-size: 0.95rem;
 }
 
-/* textarea específico */
+
 .form-group textarea{
   min-height: 120px;
   resize: vertical;
 }
 
-/* Focus accesible */
+
 .form-group input:focus,
 .form-group textarea:focus{
   outline: none;
@@ -122,7 +122,7 @@
   box-shadow: 0 0 0 6px rgba(255,204,102,0.06);
 }
 
-/* Botón de envío */
+
 .submit-button{
   display: inline-block;
   padding: 12px 18px;
@@ -140,7 +140,7 @@
 .submit-button:hover{ transform: translateY(-1px); }
 .submit-button:active{ transform: translateY(0); }
 
-/* Mensaje de éxito */
+
 .success-message{
   background: #2d6a2d;
   color: #fff;
@@ -150,14 +150,14 @@
   margin-bottom: 0.5rem;
 }
 
-/* Error (si lo necesitas en el form) */
+
 .form-error{
   color: var(--danger);
   font-weight: 600;
   margin-top: 0.25rem;
 }
 
-/* Responsive: apilar en pantallas pequeñas */
+
 @media (max-width: 900px){
   .contact-content{
     grid-template-columns: 1fr;
@@ -169,7 +169,7 @@
   .contact-subtitle{ font-size: 0.95rem; }
 }
 
-/* Ajustes para móviles muy pequeños */
+
 @media (max-width: 420px){
   .contact-page-container{ padding: 0.5rem; }
   .submit-button{ width: 100%; justify-self: stretch; }

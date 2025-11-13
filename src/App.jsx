@@ -17,7 +17,7 @@ import { Login } from "./components/Login/Login";
 
 function App() {
   return (
-    <AuthProvider> {/* <-- envolver la app con AuthProvider <Header /> */}
+    <AuthProvider> 
       <CartProvider>
         <HashRouter>
           <Header />

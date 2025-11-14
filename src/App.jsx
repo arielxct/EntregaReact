@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
@@ -19,7 +19,8 @@ function App() {
   return (
     <AuthProvider> 
       <CartProvider>
-        <HashRouter>
+        
+        <BrowserRouter>
           <Header />
           <Nav />
           <main className="layout-ecommerce">
@@ -46,7 +47,8 @@ function App() {
             </Routes>
           </main>
           <Footer />
-        </HashRouter>
+          </BrowserRouter>
+        
       </CartProvider>
     </AuthProvider>
   );
